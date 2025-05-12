@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+
+}
+
+/* App container centered with padding and shadow */
+.app {
+  background: white;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+h1 {
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form layout (centered) */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Input styling */
+form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Task item layout */
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.task:hover {
+  background-color: #e5e7eb;
+}
+
+/* Task text */
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #1f2937;
+  word-wrap: break-word;       /* 💥 Ensures long words break */
+  overflow-wrap: break-word;   /* ✅ Modern replacement */
+  word-break: break-word;      /* Fallback for older browsers */
+}
+
+
+/* Marked as completed style */
+.mark-as-completed .task-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+  opacity: 0.7;
+}
+
+/* Buttons layout */
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+p {
+  text-align: center;
+  margin: 16px 0;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.edit-btn {
+  background-color: #10b981;
+}
+
+.edit-btn:hover {
+  background-color: #059669;
+}
+
+
+@media (max-width: 480px) {
+  .task {
+    padding: 12px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form input {
+    width: 100%;
+  }
+
+  .task-text {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
